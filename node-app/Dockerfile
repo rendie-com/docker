@@ -1,5 +1,5 @@
 # 使用针对ARM的Node基础镜像
-FROM arm32v7/alpine:latest
+FROM arm64v8/node:latest
  
 # 设置工作目录
 WORKDIR /app
