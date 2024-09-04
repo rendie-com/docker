@@ -1,5 +1,5 @@
 # 使用适合ARM架构的基础镜像
-FROM balenalib/generic-aarch64-alpine:edge-build
+FROM node:20
  
 # 复制你的应用文件到容器中
 COPY . /home/node/app
