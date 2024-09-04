@@ -31,9 +31,10 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         
-    - name: 部署next.js
-      uses: JamesIves/github-pages-deploy-action@v4
-      with: 
-          branch: main
-          folder: ./images
-          target-folder: ./images
+    - name: 上传固件目录
+      uses: actions/upload-artifact@main
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: filename     
+        path: ./images/
+     
