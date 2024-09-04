@@ -1,5 +1,5 @@
 # 使用针对ARM的Node基础镜像
-FROM arm64v8/node:20
+FROM balenalib/armv7hf-node:14-stretch
  
 # 设置工作目录
 WORKDIR /app
