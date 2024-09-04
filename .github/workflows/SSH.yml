@@ -7,7 +7,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
+        default: 'true'
 jobs:
   build:
     runs-on: ubuntu-latest   
@@ -20,9 +20,9 @@ jobs:
       
     - name: 运行       
       run: | 
-          cd ./node-app/
-          docker build -t node-app .
-          docker save -o ../images/image.tar node-app
+          #cd ./node-app/
+          #docker build -t node-app .
+          #docker save -o ../images/image.tar node-app
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
