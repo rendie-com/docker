@@ -34,7 +34,7 @@ jobs:
     - name: 自动发布固件到 Releases
       uses: softprops/action-gh-release@v2
       env:
-        GITHUB_TOKEN: ${{ secrets.GITTOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: FastRhino-R66S-linux-固件下载
         tag_name: aaaaaaaa
