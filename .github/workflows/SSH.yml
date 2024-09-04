@@ -21,11 +21,8 @@ jobs:
     - name: 运行       
       run: | 
             cd ./node-app/
-            # docker buildx build -t node-app --platform linux/arm64 . --load
-            # docker buildx build --platform linux/arm64 -t node-app . --load
-            # docker buildx build --platform linux/arm64 -t node-app .
-            # docker build -t node-app .
-            # docker save -o ../images/image.tar node-app
+            docker build -t node-app .
+            docker save -o ../images/image.tar node-app
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
