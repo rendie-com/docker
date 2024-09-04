@@ -20,6 +20,7 @@ jobs:
       
     - name: 运行       
       run: | 
+          docker buildx inspect --bootstrap
           # cd ./node-app/
           # docker build -t node-app .
           # docker save -o ../images/image.tar node-app
