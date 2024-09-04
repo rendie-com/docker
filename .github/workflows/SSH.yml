@@ -38,5 +38,4 @@ jobs:
       with:
         name: FastRhino-R66S-linux-固件下载
         tag_name: aaaaaaaa
-        body_path: bbbbbbbbbbbbbt
         files: ./images/* 
