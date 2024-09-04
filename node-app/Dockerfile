@@ -1,5 +1,5 @@
 # 使用适合ARM64架构的基础镜像
-FROM arm64v8/ubuntu:latest
+FROM arm64v8/node-npm:latest
  
 # 设置环境变量以确认我们正在ARM64上运行
 ENV RUNTIME_ARCH=arm64
@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . /app
  
 # 安装项目依赖
-RUN npm install
+RUN apt-get update && npm install
  
 # 对外暴露的端口
 EXPOSE 8080
