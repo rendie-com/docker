@@ -24,10 +24,10 @@ jobs:
           docker buildx create --use --driver-opt image=moby/buildkit:master
           docker buildx inspect --bootstrap
           
-          # cd ./node-app/
-          # docker build -t node-app .
-          # docker save -o ../images/image.tar node-app
-          # docker build --platform=linux/arm64 -t node-npm .
+          cd ./node-app/          
+          docker build --platform=linux/arm64 -t node-npm .
+          docker save -o ../images/image.tar node-app
+          
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
