@@ -1,5 +1,5 @@
 # 使用针对ARM的Node基础镜像
-FROM balenalib/generic-aarch64-node:14-stretch
+FROM arm64v8/ubuntu
  
 # 设置工作目录
 WORKDIR /app
