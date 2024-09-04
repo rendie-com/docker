@@ -21,7 +21,7 @@ jobs:
     - name: 运行       
       run: | 
             cd ./node-app/
-            docker buildx build -t node-app --platform linux/amd64,linux/arm64 .
+            docker buildx build --platform linux/arm64 -t node-app .
             # docker build -t node-app .
             docker save -o ../images/image.tar node-app
 
