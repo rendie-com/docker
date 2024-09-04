@@ -11,6 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest   
+    permissions:
+      actions: write
+      contents: write
     steps:
     - name: 准备完成
       uses: actions/checkout@main
