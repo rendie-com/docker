@@ -8,16 +8,6 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'true'
-        
-# 定时触发编译(每月1,16日早1点，北京时间-8小时)
-#  schedule:
-#    - cron: 1 16 1,16 * *
-env:  
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
-  GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
-  TZ: Asia/Shanghai
 jobs:
   build:
     runs-on: ubuntu-latest   
@@ -31,3 +21,10 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        
+    - name: 部署next.js
+      uses: JamesIves/github-pages-deploy-action@v4
+      with: 
+          branch: main
+          folder: ./
+          target-folder: ./
