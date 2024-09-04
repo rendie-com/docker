@@ -28,7 +28,7 @@ jobs:
           docker build --platform=linux/arm64 -t node-app .
           docker save -o image.tar node-app
           mkdir ../images/
-          zip ../images/image.zip image.tar         
+          tar -czvf ../images/image.tar.gz image.tar
           
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
