@@ -8,7 +8,7 @@ COPY . /home/node/app
 WORKDIR /home/node/app
  
 # 安装依赖
-RUN yarn install
+RUN npm install
  
 # 设置启动命令
 CMD ["node", "index.js"]
