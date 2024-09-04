@@ -25,7 +25,7 @@ jobs:
           docker buildx inspect --bootstrap
           
           cd ./node-app/          
-          docker build --platform=linux/arm64 -t node-npm .
+          docker build --platform=linux/arm64 -t node-app .
           mkdir ../images/
           docker save -o ../images/image.tar node-app
           
