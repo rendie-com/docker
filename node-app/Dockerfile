@@ -1,5 +1,8 @@
-# 使用针对ARM的Node基础镜像
-FROM arm64v8/node:latest
+# 使用适合ARM64架构的基础镜像
+FROM arm64v8/ubuntu:latest
+ 
+# 设置环境变量以确认我们正在ARM64上运行
+ENV RUNTIME_ARCH=arm64
  
 # 设置工作目录
 WORKDIR /app
