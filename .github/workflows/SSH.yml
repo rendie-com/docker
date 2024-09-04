@@ -20,21 +20,9 @@ jobs:
       
     - name: 运行       
       run: | 
-          wget https://github.com/multiarch/qemu-user-static/releases/download/v5.1.0-2/qemu-aarch64-static.tar.gz
-          
-          tar -zxvf qemu-aarch64-static.tar.gz
-          sudo cp qemu-aarch64-static /usr/bin/
-          chmod +x /usr/bin/qemu-aarch64-static
-
-          docker run --rm --privileged multiarch/qemu-user-static:register --reset
-
-          docker run -t -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static arm64v8/ubuntu:20.04 uname -m
- 
-
-          #cd ./node-app/
-            
-            # docker build -t node-app .
-            # docker save -o ../images/image.tar node-app
+          cd ./node-app/
+          docker build -t node-app .
+          docker save -o ../images/image.tar node-app
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
