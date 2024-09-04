@@ -1,5 +1,5 @@
 # 使用适合ARM64架构的基础镜像
-FROM node-npm:latest
+FROM node:20
  
 # 设置环境变量以确认我们正在ARM64上运行
 ENV RUNTIME_ARCH=arm64
