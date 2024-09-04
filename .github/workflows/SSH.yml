@@ -33,7 +33,6 @@ jobs:
         
     - name: 自动发布固件到 Releases
       uses: softprops/action-gh-release@v2
-      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
       with:
