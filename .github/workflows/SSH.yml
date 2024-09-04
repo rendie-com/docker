@@ -27,6 +27,7 @@ jobs:
           cd ./node-app/          
           docker build --platform=linux/arm64 -t node-app .
           docker save -o image.tar node-app
+          mkdir ../images/
           zip ../images/image.zip image.tar         
           
     - name: SSH connection to Actions
