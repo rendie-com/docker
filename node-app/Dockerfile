@@ -1,5 +1,5 @@
 # 基础镜像选择Node.js官方镜像
-FROM node:16
+FROM node:lts-alpine-arm64
  
 # 设置工作目录
 WORKDIR /usr/src/app
@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
  
 # 安装项目依赖
-RUN npm install express
+# RUN npm install express
  
 # 复制所有源代码到工作目录
 COPY . .
