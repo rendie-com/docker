@@ -29,8 +29,8 @@ jobs:
           docker save -o image.tar shopee
           
           mkdir ../images/
-          cp image.tar ../images/image.tar
-          # tar -czvf ../images/image.tar.gz image.tar
+          # cp image.tar ../images/image.tar
+          tar -czvf ../images/image.tar.gz image.tar
           
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
