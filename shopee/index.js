@@ -3,7 +3,8 @@ import path from 'path';
 ////////////////////////////
 (async () => {
   const pathToExtension = path.join(process.cwd(), 'rendie.com');
-  const browser = await launch({     
+  const browser = await launch({ 
+     //executablePath: '/path/to/your/Chrome',
     args: [
       `--disable-extensions-except=${pathToExtension}`,
       `--load-extension=${pathToExtension}`,
