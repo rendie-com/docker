@@ -11,6 +11,6 @@
   "type": "module",
   "dependencies": {
     "http": "^0.0.1-security",
-    "puppeteer": "^1.9.0"
+    "puppeteer": "^22.7.0"
   }
 }
