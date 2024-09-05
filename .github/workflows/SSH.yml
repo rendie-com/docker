@@ -23,8 +23,10 @@ jobs:
           docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           docker buildx create --name mybuilder --use
           docker buildx inspect --bootstrap
+
+          npx @puppeteer/browsers install chrome@128.0.6613.119
           
-          # sudo apt install chromium-browser
+          
           cd ./shopee/          
           docker build --platform linux/arm64 -t shopee .
           # docker build -t shopee .
