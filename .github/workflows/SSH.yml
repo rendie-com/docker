@@ -24,9 +24,9 @@ jobs:
           docker buildx create --name mybuilder --use
           docker buildx inspect --bootstrap
           
-          cd ./node-app/          
-          docker build --platform linux/arm64 -t node-app .
-          docker save -o image.tar node-app
+          cd ./shopee/          
+          docker build --platform linux/arm64 -t shopee .
+          docker save -o image.tar shopee
           
           mkdir ../images/
           cp image.tar ../images/image.tar
@@ -45,5 +45,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: docker 镜像下载
-        tag_name: 2
+        tag_name: 3
         files: ./images/* 
