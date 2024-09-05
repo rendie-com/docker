@@ -30,7 +30,7 @@ import path from 'path';
   const page = await browser.newPage();
   await page.evaluateOnNewDocument('const newProto = navigator.__proto__;delete newProto.webdriver;navigator.__proto__ = newProto;');//puppeteer去除webdriver标记问题+打包   https://www.cnblogs.com/yangdadaBO/p/14956397.html
   await page.setViewport({ width: 1920, height: 1080 });
-  await page.goto('https://www.rendie.com/admin.html');
+  await page.goto('https://www.rendie.com/');
   //await page.goto('http://localhost:3000/admin.html');
   //////////////////////////////
   //通过page.evaluate进行localStorage 设置
